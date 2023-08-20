@@ -5,12 +5,13 @@ on:
     branches:
       - main
     paths:
-      - backend
+      - ./backend
 
 jobs:
   deploy_job:
     name: deploy job
     runs-on: ubuntu-latest
+
     steps:
       - name: "Say Hello World"
         run: |
