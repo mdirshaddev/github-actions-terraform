@@ -39,7 +39,6 @@ jobs:
           echo test, and deploy your project.
 
   test:
-    if: ${{ github.event.pull_request.merged != false }}
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
