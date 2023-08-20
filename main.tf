@@ -47,6 +47,12 @@ resource "vercel_project_domain" "mdirshad" {
   domain = "mdirshad.vercel.app"
 }
 
+variable "vercel_api_token" {
+  type      = string
+  sensitive = true
+  description = "Vercel API Token for integrating with Vercel"
+}
+
 output "deployment_url" {
   value = vercel_deployment.mdirshad.url
 }
