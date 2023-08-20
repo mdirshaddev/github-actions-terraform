@@ -8,9 +8,9 @@ on:
       - backend
 
 jobs:
-  run:
+  deploy_job:
+    name: deploy job
     runs-on: ubuntu-latest
-  
     steps:
       - name: "Say Hello World"
         run: |
