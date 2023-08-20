@@ -27,8 +27,8 @@ resource "vercel_project" "mdirshad" {
   framework = "nextjs"
 
   serverless_function_region = "bom1"
-  
-  root_directory = "./frontend"
+
+  root_directory = "frontend"
   
   git_repository = {
     type = "github"
