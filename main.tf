@@ -1,13 +1,13 @@
 terraform {
-  terraform {
   cloud {
+    hostname = "app.terraform.io"
+
     organization = "mdirshaddev"
 
     workspaces {
       name = "github-actions-terraform"
     }
   }
-}
   
   required_providers {
     vercel = {
