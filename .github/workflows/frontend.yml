@@ -1,0 +1,11 @@
+name: Frontend Workflow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - frontend
+
+jobs:
+  run:
