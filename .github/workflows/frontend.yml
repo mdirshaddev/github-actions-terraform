@@ -9,9 +9,9 @@ on:
 
 jobs:
   run:
-  runs-on: ubuntu-latest
-
-  steps:
-    - name: "Say Hello World"
-      run: |
-        echo "Say, Hello World from Frontend"
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: "Say Hello World"
+        run: |
+          echo "Say, Hello World from Frontend"
