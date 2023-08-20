@@ -1,11 +1,12 @@
 terraform {
+
   cloud {
     hostname = "app.terraform.io"
 
     organization = "mdirshaddev"
 
     workspaces {
-      name = "github-actions-terraform"
+      name = "mdirshad-local"
     }
   }
   
@@ -18,6 +19,7 @@ terraform {
 }
 
 provider "vercel" {
+  api_token = var.vercel_api_token
 }
 
 resource "vercel_project" "mdirshad" {
@@ -25,26 +27,24 @@ resource "vercel_project" "mdirshad" {
   framework = "nextjs"
 
   serverless_function_region = "bom1"
-
+  
+  root_directory = "./frontend"
+  
   git_repository = {
     type = "github"
-    repo = "mdirshaddev/github-actions-terraform"
+    repo = "mdirshaddev/github-actions-terraform "
+    production_branch = "main"
   }
 }
 
-resource "vercel_deployment" "mdirshad" {
-  project_id = vercel_project.mdirshad.id
-  production = true
-
-  environment = {
-
-  }
-}
-
-resource "vercel_project_domain" "mdirshad" {
-  project_id = vercel_project.mdirshad.id
-  domain = "mdirshad.vercel.app"
-}
+# resource "vercel_deployment" "mdirshad" {
+#   project_id = vercel_project.mdirshad.id
+#   project_settings = {
+    
+#   }
+#   ref = "main"
+#   production = true
+# }
 
 variable "vercel_api_token" {
   type      = string
@@ -52,13 +52,13 @@ variable "vercel_api_token" {
   description = "Vercel API Token for integrating with Vercel"
 }
 
-output "deployment_url" {
-  value = vercel_deployment.mdirshad.url
-}
+# output "deployment_url" {
+#   value = vercel_deployment.mdirshad.url
+# }
 
-output "deployment_id" {
-  value = vercel_deployment.mdirshad.id
-}
+# output "deployment_id" {
+#   value = vercel_deployment.mdirshad.id
+# }
 
 output "vercel_instance" {
   value = vercel_project.mdirshad.id
