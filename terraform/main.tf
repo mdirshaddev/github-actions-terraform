@@ -32,7 +32,7 @@ resource "vercel_project" "mdirshad" {
   
   git_repository = {
     type = "github"
-    repo = "mdirshaddev/github-actions-terraform "
+    repo = "mdirshaddev/github-actions-terraform"
     production_branch = "main"
   }
 }
