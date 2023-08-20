@@ -1,3 +1,3 @@
 export function Name() {
-  return null;
+  return 0;
 }
